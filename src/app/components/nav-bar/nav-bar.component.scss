@@ -1,0 +1,31 @@
+header {
+  background-color: #111;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & nav{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    max-width: 1200px;
+    & ul.nav-icons{
+      grid-column: 4/5;
+    }
+    & ul{
+      display: flex;
+      list-style: none;
+      gap: 1.5vw;
+      & li{
+        margin: 0;
+        & a{
+          text-decoration: none;
+          color: white;
+          &:hover{
+            color: #aaa;
+          }
+        }
+      }
+    }
+  }
+}
