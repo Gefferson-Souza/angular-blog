@@ -1,0 +1,12 @@
+#card-big{
+  grid-column: 1 / 2;
+  grid-row: 1 / 5;
+    & img {
+      object-fit: cover;
+      width: 100%;
+    }
+    & a {
+      text-decoration: none;
+      color: var(--text-color);
+    }
+}

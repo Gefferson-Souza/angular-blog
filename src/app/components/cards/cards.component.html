@@ -1,22 +1,18 @@
 <section class="cards">
-  <article id="card-big" class="card-article">
-    <img src="{{cardImg}}" class="card-img" alt="1" />
-    <h2 class="card-title"><a href="#" class="card-link">{{cardTitle}}</a></h2>
-    <p class="card-description"><a href="#" class="card-link">{{cardDescription}} </a></p>
-  </article>
-  <article class="card-article card-small">
-    <img src="{{cardImg}}" class="card-img" alt="1" />
-    <h2 class="card-title"><a href="#" class="card-link">{{cardTitle}}</a></h2>
-    <p class="card-description"><a href="#" class="card-link">{{cardDescription}} </a></p>
-  </article>
-  <article class="card-article card-small">
-    <img src="{{cardImg}}" class="card-img" alt="1" />
-    <h2 class="card-title"><a href="#" class="card-link">{{cardTitle}}</a></h2>
-    <p class="card-description"><a href="#" class="card-link">{{cardDescription}} </a></p>
-  </article>
-  <article class="card-article card-small">
-    <img src="{{cardImg}}" class="card-img" alt="1" />
-    <h2 class="card-title"><a href="#" class="card-link">{{cardTitle}}</a></h2>
-    <p class="card-description"><a href="#" class="card-link">{{cardDescription}} </a></p>
-  </article>
+  <app-big-card
+  id='{{bigCard.id}}'
+  cardImg="{{bigCard.img}}"
+  cardDescription="{{bigCard.description}}"
+  cardTitle="{{bigCard.title}}"
+  >
+</app-big-card>
+<section class="small-cards">
+  <app-small-card
+  *ngFor="let smallCard of smallCards"
+  id="{{smallCard.id}}"
+  cardImg="{{smallCard.img}}"
+  cardDescription="{{smallCard.description}}"
+  cardTitle="{{smallCard.title}}"
+  ></app-small-card>
+</section>
 </section>

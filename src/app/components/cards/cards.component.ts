@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { data } from '../../data/data'
+import { Title } from '@angular/platform-browser';
+
+interface BigCard {
+  id: string;
+  title: string;
+  img: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-cards',
@@ -7,13 +16,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  cardImg: string = 'https://placehold.co/4000';
-  cardTitle: string = 'Title component';
-  cardDescription: string = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus inventore quos laudantium velit! Vero quo suscipit magnam quae! Blanditiis quae minus cumque enim eveniet debitis officia dolorem ipsa, error eaque.';
+  bigCard: BigCard = {
+    id: "",
+    title: "",
+    img: '',
+    description: ''
+  };
+  smallCards: BigCard[] = [{
+    id: "",
+    title: "",
+    img: '',
+    description: ''
+  }];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.setDataValues()
   }
-
+  setDataValues(): void {
+    const ultimasPostagens = data.filter((item: BigCard, index) => index >= (data.length - 4)
+    )
+    this.bigCard = ultimasPostagens[3];
+    this.smallCards = ultimasPostagens.filter((item, index) => index < 3)
+  }
 }

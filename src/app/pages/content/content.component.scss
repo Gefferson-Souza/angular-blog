@@ -1,0 +1,14 @@
+.content{
+  display: grid;
+  margin-top: 20px;
+  section{
+    justify-self: center;
+  }
+  .cover{
+    width: 20%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
